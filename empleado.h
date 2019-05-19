@@ -3,6 +3,10 @@
 
 #include "trabajador.h"
 
+const float DESCUENTO_AUSENCIA = 0.33;
+const int LLEGADAS_TARDE_MAX = 3;
+const float PRESENTISMO = 1.10;
+
 class Empleado : public Trabajador{
 	private:
 		int sueldo_mensual;

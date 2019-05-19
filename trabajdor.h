@@ -16,7 +16,7 @@ class Trabajador{
 		virtual char obtenerTipo();
 		virtual string obtenerNombre();
 		virtual int obtenerLegajo();
-		virtual float obenerSueldo();
+		virtual float obtenerSueldo();
 };
 
 #endif
