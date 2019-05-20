@@ -2,6 +2,7 @@
 #define _JORNALERO_H
 
 #include "trabajador.h"
+using namespace std;
 
 class Jornalero : public Trabajador{
 	private:

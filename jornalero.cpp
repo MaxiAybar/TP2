@@ -1,5 +1,6 @@
 #include "jornalero.h"
 #include "trabjaador.h"
+using namespace std;
 
 void asignarJornalero(string nombre, int legajo, int valor_diario, int cant_dias){
 	tipo = 'J';
@@ -14,7 +15,7 @@ void Jornalero::liquidarSueldo(){
 }
 
 void Jornalero::mostrar(){
-	cout<< "Tipo: "<< tipo<< endl
+	cout<< "Tipo: Jornalero"<< endl
 	<< "Nombre: "<< nombre<< endl
 	<< "N° Legajo: "<< legajo<< endl
 	<< "Valor por dia: "<< valor_diario<< endl

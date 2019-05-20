@@ -3,9 +3,10 @@
 
 #include "trabajador.h"
 #include <string>
+using namespace std;
 
 const float DESCUENTO_AUSENCIA = 0.033; //Cada dia de trabajo equivale 3,3% de su salario mensual
-const int MAS_DEMORAS = 3;
+const int MAX_DEMORAS = 3;
 const float PRESENTISMO = 1.10;
 
 class Empleado : public Trabajador{
@@ -15,7 +16,13 @@ class Empleado : public Trabajador{
 		int ausencias;
 		
 	public:
-		void asignarEmpleado(int legajo, string nombre, int sueldo_mensual, int demoras, int ausencias);
+		void asignarEmpleado(string nombre, int legajo, int sueldo_mensual, int demoras, int ausencias);
+		void liquidarSueldo();
+		virtual void mostrar();
+		virtual char obtenerTipo();
+		virtual string obtenerNombre();
+		virtual int obtenerLegajo();
+		virtual float obtenerSueldo();
 };
 
 #endif

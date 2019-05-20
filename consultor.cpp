@@ -1,5 +1,6 @@
 #include "consultor.h"
 #include "trabajador.h"
+using namespace std;
 
 void Consultor::asignarConsultor(string nombre, int legajo, int valor_hora_catedra, int horas_catedras, int horas_incumplidas){
 	tipo = 'C';
@@ -15,7 +16,7 @@ void Consultor::liquidarSueldo(){
 }
 
 void Jornalero::mostrar(){
-	cout<< "Tipo: "<< tipo<< endl
+	cout<< "Tipo: Consultor"<< endl
 	<< "Nombre: "<< nombre<< endl
 	<< "N° Legajo: "<< legajo<< endl
 	<< "Salario por hora catedra: "<< valor_hora_catedra<< endl

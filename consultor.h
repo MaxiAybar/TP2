@@ -2,6 +2,8 @@
 #define _CONSULTOR_H
 
 #include "trabajador.h"
+#include <string>
+using namespace std;
 
 class Consultor : public Trabajador{
 	private:

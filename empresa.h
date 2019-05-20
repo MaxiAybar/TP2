@@ -1,27 +1,27 @@
 #ifndef _EMPRESA_H
-#deifne _EMPRESA_H
+#define _EMPRESA_H
 
 #include <string>
 #include <list>
 #include "trabajador.h"
+using namespace std;
 const string NOMBRE_EMPRESA = "Carre4 SA";
 
 class Empresa{
 	private:
-		List<Trabajador> trabajadores;
+		list<Trabajador> trabajadores;
 	
 	public:
 		Empresa();
 		void mostrarMenu();
 		void ejecutarApp();
 		void cargarTrabajadores();
-		void mostrarTrabajador(Trabajador);
-		Trabajador existeLegajo();
+		void buscarLegajo();
 		void eliminarLegajo();
 		void darAltadeTrab();
-		Trabajador listarEmpleadores();
-		Trabajador sueldoMax();
-		Trabajador sueldoMin();
+		void listarEmpleadores();
+		void sueldoMax();
+		void sueldoMin();
 		void sumDeSueldo();
 		void aCadena();
 		void terminarApp();
