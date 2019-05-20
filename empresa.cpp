@@ -82,6 +82,7 @@ void Empresa::ejecutarApp(){
 void Empresa::ejecutarOpcion(int opcion){
 	switch(opcion){
 		case 0:
+			cout<< "Adios"<< endl;
 			break;
 			
 		case 1:
@@ -100,8 +101,11 @@ void Empresa::buscarLegajo(){
 	cin>> legajo;
 	list<Trabajador*>::iterator it = trabajadores.begin();
 	for(; it != trabajadores.end(); it++){
-		if((**it).obtenerLegajo() == legajo){
-			(**it).mostrar();
+		Trabajador* aux = new Empleado;
+		*aux = **it;
+		if((*aux).obtenerLegajo() == legajo){
+			(*aux).mostrar();
 		}
+		delete aux;
 	}
 }

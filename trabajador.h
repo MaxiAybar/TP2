@@ -6,7 +6,6 @@ using namespace std;
 
 class Trabajador{
 	protected:
-		char tipo;
 		string nombre;
 		int legajo;
 		float sueldo;

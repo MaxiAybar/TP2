@@ -5,7 +5,6 @@
 using namespace std;
 
 void Jornalero::asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC){
-	tipo = 'J';
 	this->nombre = nombre;
 	this->legajo = legajo;
 	this->valor_diario = atributoA;

@@ -5,7 +5,6 @@
 using namespace std;
 
 void Empleado::asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC){
-	tipo = 'E';
 	this->nombre = nombre;
 	this->legajo = legajo;
 	this->sueldo_mensual = atributoA;
@@ -29,7 +28,7 @@ void Empleado::liquidarSueldo(){
 void Empleado::mostrar(){
 	cout<< "Tipo: Empleado"<< endl
 	<< "Nombre: "<< nombre<< endl
-	<< " Legajo: "<< legajo<< endl
+	<< "Legajo: "<< legajo<< endl
 	<< "Sueldo mensual: "<< sueldo_mensual<< endl
 	<< "Demoras: "<< demoras<< endl
 	<< "Ausencias: "<< ausencias<< endl
