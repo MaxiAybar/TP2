@@ -30,3 +30,6 @@ void Consultor::mostrar(){
 int Consultor::obtenerLegajo(){
 	return legajo;
 }
+
+Consultor::~Consultor(){
+}

@@ -20,6 +20,7 @@ class Empleado : public Trabajador{
 		void liquidarSueldo();
 		void mostrar();
 		int obtenerLegajo();
+		~Empleado();
 };
 
 #endif

@@ -81,14 +81,16 @@ void Empresa::ejecutarApp(){
 
 void Empresa::ejecutarOpcion(int opcion){
 	switch(opcion){
-		case 1:
-			buscarLegajo();
-			cin.get();
+		case 0:
 			break;
 			
-		/*case default:
+		case 1:
+			buscarLegajo();
+			break;
+			
+		default:
 			cout<< "Opcion no valida"<< endl<< endl;
-			cin.get();*/	
+			cin.get();	
 	}
 }
 

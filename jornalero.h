@@ -15,6 +15,7 @@ class Jornalero : public Trabajador{
 		void liquidarSueldo();
 		void mostrar();
 		int obtenerLegajo();
+		~Jornalero();
 };
 
 #endif

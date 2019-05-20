@@ -39,3 +39,6 @@ void Empleado::mostrar(){
 int Empleado::obtenerLegajo(){
 	return legajo;
 }
+
+Empleado::~Empleado(){
+}
