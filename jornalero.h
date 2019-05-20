@@ -9,8 +9,7 @@ class Jornalero : public Trabajador{
 		int cant_dias;
 	
 	public:
-		void asignarValorDiario(int valor_diario);
-		void asignarCantDias(int cant_dias);
+		void asginarJornalero(string nombre, int legajo, int valor_diario, int cant_dias);
 };
 
 #endif

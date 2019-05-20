@@ -25,10 +25,8 @@ void Empresa::cargarTrabajadores(){
 			int llegadas_tarde;
 			int ausencias;
 			txt>> legajo>> nombre>> sueldo_mensual>> llegadas_tarde>> ausencias;
-			aux.asignarSueldoMensual(sueldo_mensual);
-			aux.asignarLlegadasTarde(llegadas_tarde);
-			aux.asignarAusencias(ausencias);
-			aux.asignarTrabajador(tipo, nombre, legajo, aux.calcularSueldo());
+			aux.asignarEmpleado(nombre, legajo, sueldo_mensual, demoras, ausencias);
+			aux.liquidarSueldo();
 			trabajadores.push_back(aux);
 			delete aux;
 		}
@@ -37,24 +35,35 @@ void Empresa::cargarTrabajadores(){
 			int valor_diario;
 			int cant_dias;
 			txt>> legajo>> nombre>> valor_diario>> cant_dias;
-			aux.asignarValorDiario(valor_diario);
-			aux.asignarCantDias(cant_dias);
-			aux.asignarTrabajador(tipo, nombre, legajo, aux.calcularSueldo());
+			aux.asginarJornalero(nombre, legajo, valor_diario, cant_dias);
+			aux.liquidarSueldo()
 			trabajadores.push_back(aux);
-			delte aux;
+			delete aux;
 		}
 		else if(tipo == 'C'){
 			aux = new Consultor;
 			int valor_hora_catedra;
 			int horas_catedras;
-			int horas_a_descontar;
+			int horas_incumplidas;
 			txt>> legajo>> nombre>> valor_hora_catedra>> horas_catedras>> horas_a_descontar;
-			aux.asignarValorHora(valor_hora_catedra);
-			aux.asignarHorasCatedras(horas_catedras);
-			aux.asignarHorasADescontar(horas_a_descontar);
-			aux.asignarTrabjador(tipo, nombre, legajo, aux.calcularSueldo());
+			aux.asignarConsultor(nombre, legajo, valor_hora_catedra, horas_catedras, horas_incumplidas);
+			aux.liquidarSueldo();
+			trabajadores.push_back(aux);
 			delete aux;
 		}
 	}
 	txt.close();
+}
+
+void Empresa::mostrarMenu(){
+	cout<< "1. Consultar n° legajo"<< endl
+	<< "2. Dar de baja un n° legajo"<< endl
+	<< "3. Dar de alta un trabjaador"<< endl
+	<< "4. Listar trabajadores"<< endl
+	<< "5. Sueldo max"<< endl
+	<< "6. Sueldo min"<< endl
+	<< "7. Total de sueldos a liquidar"<< endl
+	<< "8. Actualizar"<< endl
+	<< "9. Liquidar sueldos"<< endl
+	<< "0. Salir"<< endl<< endl;
 }

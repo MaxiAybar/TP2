@@ -7,12 +7,10 @@ class Consultor : public Trabajador{
 	private:
 		int valor_hora_catedra;
 		int horas_catedras;
-		int horas_a_descontar;
+		int horas_incumplidas;
 		
 	public:
-		void asignarValorHora(int valor_hora_catedra);
-		void asignarHorasCatedras(int horas_catedras);
-		void asignarHorasADescontar(int horas_a_descontar);
+		void asignarConsultor(string nombre, int legajo, int valor_hora_catedra, int horas_catedras, int horas_incumplidas);
 };
 
 #endif

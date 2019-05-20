@@ -11,8 +11,8 @@ class Trabajador{
 		float sueldo;
 
 	public:
-		virtual float calcularSueldo();
-		virtual void asignarTrabajador(char tipo, string nombre, int legajo, float sueldo);
+		virtual float liquidarSueldo();
+		virtual void mostrar();
 		virtual char obtenerTipo();
 		virtual string obtenerNombre();
 		virtual int obtenerLegajo();
