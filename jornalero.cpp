@@ -1,8 +1,10 @@
 #include "jornalero.h"
-#include "trabjaador.h"
+#include "trabajador.h"
+#include <iostream>
+#include <string>
 using namespace std;
 
-void asginarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0){
+void Jornalero::asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC){
 	tipo = 'J';
 	this->nombre = nombre;
 	this->legajo = legajo;

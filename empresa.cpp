@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <list>
 using namespace std;
 
 Empresa::Empresa(){
@@ -29,7 +30,7 @@ void Empresa::cargarTrabajadores(){
 			txt>> legajo>> nombre>> sueldo_mensual>> demoras>> ausencias;
 			(*aux).asignarTrabajador(nombre, legajo, sueldo_mensual, demoras, ausencias);
 			(*aux).liquidarSueldo();
-			trabajadores.push_back(*aux);
+			trabajadores.push_back(aux);
 			delete aux;
 		}
 		else if(tipo == 'J'){
@@ -37,9 +38,9 @@ void Empresa::cargarTrabajadores(){
 			int valor_diario;
 			int cant_dias;
 			txt>> legajo>> nombre>> valor_diario>> cant_dias;
-			(*aux).asignarTrabajador(nombre, legajo, valor_diario, cant_dias);
+			(*aux).asignarTrabajador(nombre, legajo, valor_diario, cant_dias, 0);
 			(*aux).liquidarSueldo();
-			trabajadores.push_back(*aux);
+			trabajadores.push_back(aux);
 			delete aux;
 		}
 		else if(tipo == 'C'){
@@ -74,7 +75,7 @@ void Empresa::ejecutarApp(){
 	while(opcion != 0){
 		mostrarMenu();
 		cin>> opcion;
-		ejecutarOpcion();
+		ejecutarOpcion(opcion);
 	}
 }
 
@@ -84,9 +85,10 @@ void Empresa::ejecutarOpcion(int opcion){
 			buscarLegajo();
 			cin.get();
 			break;
-		case default:
+			
+		/*case default:
 			cout<< "Opcion no valida"<< endl<< endl;
-			cin.get();		
+			cin.get();*/	
 	}
 }
 
@@ -94,10 +96,10 @@ void Empresa::buscarLegajo(){
 	int legajo;
 	cout<< "Ingrese N° Legajo a buscar: ";
 	cin>> legajo;
-	list<Trabajador>::iterator it = trabajadores.begin();
+	list<Trabajador*>::iterator it = trabajadores.begin();
 	for(; it != trabajadores.end(); it++){
-		if((*it).obtenerLegajo == legajo){
-			(*it).mostrar;
+		if((**it).obtenerLegajo() == legajo){
+			(**it).mostrar();
 		}
 	}
 }

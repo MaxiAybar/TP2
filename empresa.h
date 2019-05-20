@@ -9,12 +9,13 @@ const string NOMBRE_EMPRESA = "Carre4 SA";
 
 class Empresa{
 	private:
-		list<Trabajador> trabajadores;
+		list<Trabajador*> trabajadores;
 	
 	public:
 		Empresa();
 		void mostrarMenu();
 		void ejecutarApp();
+		void ejecutarOpcion(int opcion);
 		void cargarTrabajadores();
 		void buscarLegajo();
 		void eliminarLegajo();

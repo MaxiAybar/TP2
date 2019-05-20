@@ -1,8 +1,10 @@
 #include "consultor.h"
 #include "trabajador.h"
+#include <iostream>
+#include <string>
 using namespace std;
 
-void Consultor::asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0){
+void Consultor::asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC){
 	tipo = 'C';
 	this->nombre = nombre;
 	this->legajo = legajo;
@@ -15,12 +17,12 @@ void Consultor::liquidarSueldo(){
 	sueldo = valor_hora_catedra * (horas_catedras * 4 - horas_incumplidas) / 4;
 }
 
-void Jornalero::mostrar(){
+void Consultor::mostrar(){
 	cout<< "Tipo: Consultor"<< endl
 	<< "Nombre: "<< nombre<< endl
 	<< "N° Legajo: "<< legajo<< endl
 	<< "Salario por hora catedra: "<< valor_hora_catedra<< endl
-	<< "Horas catedras a cargo: "<< horas catedras<< endl
-	<< "Horas sin cumplir: "<< horas incumplidas<< endl
+	<< "Horas catedras a cargo: "<< horas_catedras<< endl
+	<< "Horas sin cumplir: "<< horas_incumplidas<< endl
 	<< "Sueldo a cobrar: "<< sueldo<< endl<< endl;
 }
