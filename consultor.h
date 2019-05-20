@@ -12,7 +12,13 @@ class Consultor : public Trabajador{
 		int horas_incumplidas;
 		
 	public:
-		void asignarConsultor(string nombre, int legajo, int valor_hora_catedra, int horas_catedras, int horas_incumplidas);
+		void asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0);
+		void liquidarSueldo();
+		void mostrar();
+		char obtenerTipo();
+		string obtenerNombre();
+		int obtenerLegajo();
+		float obtenerSueldo();
 };
 
 #endif

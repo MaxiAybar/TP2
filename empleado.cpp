@@ -4,13 +4,13 @@
 #include <iostream>
 using namespace std;
 
-void Empleado::asignarEmpleado(string nombre, int legajo, int sueldo_mensual, int demoras, int ausencias){
+void Empleado::asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0){
 	tipo = 'E';
 	this->nombre = nombre;
 	this->legajo = legajo;
-	this->sueldo_mensual = sueldo_mensual;
-	this->demoras = demoras;
-	this->ausencias = ausencias;
+	this->sueldo_mensual = atributoA;
+	this->demoras = atributoB;
+	this->ausencias = atributoC;
 }
 
 void Empleado::liquidarSueldo(){

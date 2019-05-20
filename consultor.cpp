@@ -2,13 +2,13 @@
 #include "trabajador.h"
 using namespace std;
 
-void Consultor::asignarConsultor(string nombre, int legajo, int valor_hora_catedra, int horas_catedras, int horas_incumplidas){
+void Consultor::asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0){
 	tipo = 'C';
 	this->nombre = nombre;
 	this->legajo = legajo;
-	this->valor_hora_catedra = valor_hora_catedra;
-	this->horas_catedras = horas_catedras;
-	this->horas_incumplidas = horas_incumplidas;
+	this->valor_hora_catedra = atributoA;
+	this->horas_catedras = atributoB;
+	this->horas_incumplidas = atributoC;
 }
 
 void Consultor::liquidarSueldo(){

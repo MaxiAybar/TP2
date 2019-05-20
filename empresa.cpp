@@ -27,29 +27,29 @@ void Empresa::cargarTrabajadores(){
 			int demoras;
 			int ausencias;
 			txt>> legajo>> nombre>> sueldo_mensual>> demoras>> ausencias;
-			(*aux).asignarEmpleado(nombre, legajo, sueldo_mensual, demoras, ausencias);
+			(*aux).asignarTrabajador(nombre, legajo, sueldo_mensual, demoras, ausencias);
 			(*aux).liquidarSueldo();
 			trabajadores.push_back(*aux);
-			delete (*aux);
+			delete aux;
 		}
 		else if(tipo == 'J'){
-			aux = new Jornalero;
+			Trabajador *aux = new Jornalero;
 			int valor_diario;
 			int cant_dias;
 			txt>> legajo>> nombre>> valor_diario>> cant_dias;
-			aux.asginarJornalero(nombre, legajo, valor_diario, cant_dias);
-			aux.liquidarSueldo()
-			trabajadores.push_back(aux);
+			(*aux).asignarTrabajador(nombre, legajo, valor_diario, cant_dias);
+			(*aux).liquidarSueldo();
+			trabajadores.push_back(*aux);
 			delete aux;
 		}
 		else if(tipo == 'C'){
-			aux = new Consultor;
+			Trabajador *aux = new Consultor;
 			int valor_hora_catedra;
 			int horas_catedras;
 			int horas_incumplidas;
-			txt>> legajo>> nombre>> valor_hora_catedra>> horas_catedras>> horas_a_descontar;
-			aux.asignarConsultor(nombre, legajo, valor_hora_catedra, horas_catedras, horas_incumplidas);
-			aux.liquidarSueldo();
+			txt>> legajo>> nombre>> valor_hora_catedra>> horas_catedras>> horas_incumplidas;
+			(*aux).asignarTrabajador(nombre, legajo, valor_hora_catedra, horas_catedras, horas_incumplidas);
+			(*aux).liquidarSueldo();
 			trabajadores.push_back(aux);
 			delete aux;
 		}

@@ -2,6 +2,7 @@
 #define _JORNALERO_H
 
 #include "trabajador.h"
+#include <string>
 using namespace std;
 
 class Jornalero : public Trabajador{
@@ -10,7 +11,13 @@ class Jornalero : public Trabajador{
 		int cant_dias;
 	
 	public:
-		void asginarJornalero(string nombre, int legajo, int valor_diario, int cant_dias);
+		void asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0);
+		void liquidarSueldo();
+		void mostrar();
+		char obtenerTipo();
+		string obtenerNombre();
+		int obtenerLegajo();
+		float obtenerSueldo();
 };
 
 #endif

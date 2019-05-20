@@ -16,13 +16,13 @@ class Empleado : public Trabajador{
 		int ausencias;
 		
 	public:
-		void asignarEmpleado(string nombre, int legajo, int sueldo_mensual, int demoras, int ausencias);
+		void asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0);
 		void liquidarSueldo();
-		virtual void mostrar();
-		virtual char obtenerTipo();
-		virtual string obtenerNombre();
-		virtual int obtenerLegajo();
-		virtual float obtenerSueldo();
+		void mostrar();
+		char obtenerTipo();
+		string obtenerNombre();
+		int obtenerLegajo();
+		float obtenerSueldo();
 };
 
 #endif

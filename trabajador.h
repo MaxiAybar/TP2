@@ -4,7 +4,6 @@
 #include <string>
 using namespace std;
 
-template<dato>
 class Trabajador{
 	protected:
 		char tipo;
@@ -14,6 +13,7 @@ class Trabajador{
 
 	public:
 		virtual void liquidarSueldo() = 0;
+		virtual void asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0) = 0;
 		virtual void mostrar() = 0;
 		virtual char obtenerTipo() = 0;
 		virtual string obtenerNombre() = 0;

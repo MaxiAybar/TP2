@@ -2,12 +2,12 @@
 #include "trabjaador.h"
 using namespace std;
 
-void asignarJornalero(string nombre, int legajo, int valor_diario, int cant_dias){
+void asginarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0){
 	tipo = 'J';
 	this->nombre = nombre;
 	this->legajo = legajo;
-	this->valor_diario = valor_diario;
-	this->cant_dias = cant_dias
+	this->valor_diario = atributoA;
+	this->cant_dias = atributoB;
 }
 
 void Jornalero::liquidarSueldo(){
