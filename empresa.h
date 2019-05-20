@@ -18,7 +18,7 @@ class Empresa{
 		void ejecutarOpcion(int opcion);
 		void cargarTrabajadores();
 		void buscarLegajo();
-		void eliminarLegajo();
+	/*	void eliminarLegajo();
 		void darAltadeTrab();
 		void listarEmpleadores();
 		void sueldoMax();
@@ -26,7 +26,7 @@ class Empresa{
 		void sumDeSueldo();
 		void aCadena();
 		void terminarApp();
-		~Empresa();
+		~Empresa();*/
 };
 
 #endif

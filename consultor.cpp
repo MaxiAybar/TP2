@@ -20,9 +20,13 @@ void Consultor::liquidarSueldo(){
 void Consultor::mostrar(){
 	cout<< "Tipo: Consultor"<< endl
 	<< "Nombre: "<< nombre<< endl
-	<< "N° Legajo: "<< legajo<< endl
+	<< " Legajo: "<< legajo<< endl
 	<< "Salario por hora catedra: "<< valor_hora_catedra<< endl
 	<< "Horas catedras a cargo: "<< horas_catedras<< endl
 	<< "Horas sin cumplir: "<< horas_incumplidas<< endl
 	<< "Sueldo a cobrar: "<< sueldo<< endl<< endl;
+}
+
+int Consultor::obtenerLegajo(){
+	return legajo;
 }

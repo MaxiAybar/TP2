@@ -19,8 +19,12 @@ void Jornalero::liquidarSueldo(){
 void Jornalero::mostrar(){
 	cout<< "Tipo: Jornalero"<< endl
 	<< "Nombre: "<< nombre<< endl
-	<< "N° Legajo: "<< legajo<< endl
+	<< " Legajo: "<< legajo<< endl
 	<< "Valor por dia: "<< valor_diario<< endl
 	<< "Dias trabajados: "<< cant_dias<< endl
 	<< "Sueldo a cobrar: "<< sueldo<< endl<< endl;
+}
+
+int Jornalero::obtenerLegajo(){
+	return legajo;
 }

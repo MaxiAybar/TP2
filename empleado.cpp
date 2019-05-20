@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-void Empleado::asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0){
+void Empleado::asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC){
 	tipo = 'E';
 	this->nombre = nombre;
 	this->legajo = legajo;
@@ -29,7 +29,7 @@ void Empleado::liquidarSueldo(){
 void Empleado::mostrar(){
 	cout<< "Tipo: Empleado"<< endl
 	<< "Nombre: "<< nombre<< endl
-	<< "N° Legajo: "<< legajo<< endl
+	<< " Legajo: "<< legajo<< endl
 	<< "Sueldo mensual: "<< sueldo_mensual<< endl
 	<< "Demoras: "<< demoras<< endl
 	<< "Ausencias: "<< ausencias<< endl

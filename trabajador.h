@@ -12,13 +12,10 @@ class Trabajador{
 		float sueldo;
 
 	public:
-		virtual void liquidarSueldo();
-		virtual void asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0);
-		virtual void mostrar();
-		virtual char obtenerTipo();
-		virtual string obtenerNombre();
-		virtual int obtenerLegajo();
-		virtual float obtenerSueldo();
+		virtual void liquidarSueldo() = 0;
+		virtual void asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0) = 0;
+		virtual void mostrar() = 0;
+		virtual int obtenerLegajo() = 0;
 };
 
 #endif

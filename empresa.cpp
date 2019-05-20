@@ -59,8 +59,8 @@ void Empresa::cargarTrabajadores(){
 }
 
 void Empresa::mostrarMenu(){
-	cout<< "1. Consultar n° legajo"<< endl
-	<< "2. Dar de baja un n° legajo"<< endl
+	cout<< "1. Consultar legajo"<< endl
+	<< "2. Dar de baja un legajo"<< endl
 	<< "3. Dar de alta un trabjador"<< endl
 	<< "4. Listar trabajadores"<< endl
 	<< "5. Sueldo max"<< endl
@@ -94,7 +94,7 @@ void Empresa::ejecutarOpcion(int opcion){
 
 void Empresa::buscarLegajo(){
 	int legajo;
-	cout<< "Ingrese N° Legajo a buscar: ";
+	cout<< "Ingrese  Legajo a buscar: ";
 	cin>> legajo;
 	list<Trabajador*>::iterator it = trabajadores.begin();
 	for(; it != trabajadores.end(); it++){

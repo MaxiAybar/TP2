@@ -15,10 +15,7 @@ class Consultor : public Trabajador{
 		void asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0);
 		void liquidarSueldo();
 		void mostrar();
-		char obtenerTipo();
-		string obtenerNombre();
 		int obtenerLegajo();
-		float obtenerSueldo();
 };
 
 #endif
