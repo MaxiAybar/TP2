@@ -16,10 +16,11 @@ class Empleado : public Trabajador{
 		int ausencias;
 		
 	public:
-		void asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC = 0);
+		void asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC);
 		void liquidarSueldo();
 		void mostrar();
 		int obtenerLegajo();
+		int obtenerTipo();
 		~Empleado();
 };
 

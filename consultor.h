@@ -16,6 +16,7 @@ class Consultor : public Trabajador{
 		void liquidarSueldo();
 		void mostrar();
 		int obtenerLegajo();
+		int obtenerTipo();
 		~Consultor();
 };
 

@@ -23,36 +23,33 @@ void Empresa::cargarTrabajadores(){
 		char tipo;
 		txt>> tipo;
 		if(tipo == 'E'){
-			Trabajador *aux = new Empleado;
+			Trabajador *laburador = new Empleado;
 			int sueldo_mensual;
 			int demoras;
 			int ausencias;
 			txt>> legajo>> nombre>> sueldo_mensual>> demoras>> ausencias;
-			(*aux).asignarTrabajador(nombre, legajo, sueldo_mensual, demoras, ausencias);
-			(*aux).liquidarSueldo();
-			trabajadores.push_back(aux);
-			delete aux;
+			(*laburador).asignarTrabajador(nombre, legajo, sueldo_mensual, demoras, ausencias);
+			(*laburador).liquidarSueldo();
+			trabajadores.push_back(laburador);
 		}
 		else if(tipo == 'J'){
-			Trabajador *aux = new Jornalero;
+			Trabajador *laburador = new Jornalero;
 			int valor_diario;
 			int cant_dias;
 			txt>> legajo>> nombre>> valor_diario>> cant_dias;
-			(*aux).asignarTrabajador(nombre, legajo, valor_diario, cant_dias, 0);
-			(*aux).liquidarSueldo();
-			trabajadores.push_back(aux);
-			delete aux;
+			(*laburador).asignarTrabajador(nombre, legajo, valor_diario, cant_dias, 0);
+			(*laburador).liquidarSueldo();
+			trabajadores.push_back(laburador);
 		}
 		else if(tipo == 'C'){
-			Trabajador *aux = new Consultor;
+			Trabajador *laburador = new Consultor;
 			int valor_hora_catedra;
 			int horas_catedras;
 			int horas_incumplidas;
 			txt>> legajo>> nombre>> valor_hora_catedra>> horas_catedras>> horas_incumplidas;
-			(*aux).asignarTrabajador(nombre, legajo, valor_hora_catedra, horas_catedras, horas_incumplidas);
-			(*aux).liquidarSueldo();
-			trabajadores.push_back(aux);
-			delete aux;
+			(*laburador).asignarTrabajador(nombre, legajo, valor_hora_catedra, horas_catedras, horas_incumplidas);
+			(*laburador).liquidarSueldo();
+			trabajadores.push_back(laburador);
 		}
 	}
 	txt.close();
@@ -87,6 +84,7 @@ void Empresa::ejecutarOpcion(int opcion){
 			
 		case 1:
 			buscarLegajo();
+			cargarTrabajadores();
 			break;
 			
 		default:
@@ -99,13 +97,36 @@ void Empresa::buscarLegajo(){
 	int legajo;
 	cout<< "Ingrese  Legajo a buscar: ";
 	cin>> legajo;
-	list<Trabajador*>::iterator it = trabajadores.begin();
-	for(; it != trabajadores.end(); it++){
-		Trabajador* aux = new Empleado;
-		*aux = **it;
-		if((*aux).obtenerLegajo() == legajo){
-			(*aux).mostrar();
+	int contador = trabajadores.size();
+	for(int i = 0; i < contador; i++){
+		Trabajador* laburador = new Empleado;
+		laburador = trabajadores.back();
+		
+		if((int)laburador->obtenerTipo() == 1){
+			Trabajador* auxT = new Empleado;
+			auxT = trabajadores.back();
+			if((*auxT).obtenerLegajo() == legajo){
+				(*auxT).mostrar();
+			}
 		}
-		delete aux;
+		else if((*laburador).obtenerTipo() == 2){
+			Trabajador* auxT = new Consultor;
+			auxT = trabajadores.back();
+			if((*auxT).obtenerLegajo() == legajo){
+				(*auxT).mostrar();
+			}
+		}
+		else if((*laburador).obtenerTipo() == 3){
+			Trabajador* auxT = new Jornalero;
+			auxT = trabajadores.back();
+			if((*auxT).obtenerLegajo() == legajo){
+				(*auxT).mostrar();
+			}
+		}
+		trabajadores.pop_back();
 	}
+}
+
+void Empresa::eliminarLegajo(){
+	
 }

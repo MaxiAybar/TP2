@@ -5,6 +5,7 @@
 using namespace std;
 
 void Consultor::asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC){
+	tipo = 2;
 	this->nombre = nombre;
 	this->legajo = legajo;
 	this->valor_hora_catedra = atributoA;
@@ -28,6 +29,10 @@ void Consultor::mostrar(){
 
 int Consultor::obtenerLegajo(){
 	return legajo;
+}
+
+int Consultor::obtenerTipo(){
+	return tipo;
 }
 
 Consultor::~Consultor(){

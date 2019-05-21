@@ -5,6 +5,7 @@
 using namespace std;
 
 void Empleado::asignarTrabajador(string nombre, int legajo, int atributoA, int atributoB, int atributoC){
+	tipo = 1;
 	this->nombre = nombre;
 	this->legajo = legajo;
 	this->sueldo_mensual = atributoA;
@@ -37,6 +38,10 @@ void Empleado::mostrar(){
 
 int Empleado::obtenerLegajo(){
 	return legajo;
+}
+
+int Empleado::obtenerTipo(){
+	return tipo;
 }
 
 Empleado::~Empleado(){
