@@ -33,5 +33,13 @@ int Jornalero::obtenerTipo(){
 	return tipo;
 }
 
+float Jornalero::obtenerSueldo(){
+	return sueldo;
+}
+
+string Jornalero::obtenerNombre(){
+	return nombre;
+}
+
 Jornalero::~Jornalero(){
 }

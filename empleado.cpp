@@ -44,5 +44,13 @@ int Empleado::obtenerTipo(){
 	return tipo;
 }
 
+float Empleado::obtenerSueldo(){
+	return sueldo;
+}
+
+string Empleado::obtenerNombre(){
+	return nombre;
+}
+
 Empleado::~Empleado(){
 }

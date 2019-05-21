@@ -35,5 +35,13 @@ int Consultor::obtenerTipo(){
 	return tipo;
 }
 
+float Consultor::obtenerSueldo(){
+	return sueldo;
+}
+
+string Consultor::obtenerNombre(){
+	return nombre;
+}
+
 Consultor::~Consultor(){
 }

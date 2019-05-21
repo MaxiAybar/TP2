@@ -80,13 +80,28 @@ void Empresa::ejecutarOpcion(int opcion){
 	switch(opcion){
 		case 0:
 			cout<< "Adios"<< endl;
-			break;
-			
+			break;			
 		case 1:
 			buscarLegajo();
-			cargarTrabajadores();
+			break;			
+		case 3:
+			darAltadeTrab();
+			break;		
+		case 4:
+			listarTrabajadores();
+			break;	
+		case 5:
+			sueldoMax();
 			break;
-			
+		case 6:
+			sueldoMin();
+			break;
+		case 7:
+			sumDeSueldo();
+			break;
+		case 8:
+			cargarTrabajadores();
+			break;		
 		default:
 			cout<< "Opcion no valida"<< endl<< endl;
 			cin.get();	
@@ -102,7 +117,7 @@ void Empresa::buscarLegajo(){
 		Trabajador* laburador = new Empleado;
 		laburador = trabajadores.back();
 		
-		if((int)laburador->obtenerTipo() == 1){
+		if((*laburador).obtenerTipo() == 1){
 			Trabajador* auxT = new Empleado;
 			auxT = trabajadores.back();
 			if((*auxT).obtenerLegajo() == legajo){
@@ -125,8 +140,173 @@ void Empresa::buscarLegajo(){
 		}
 		trabajadores.pop_back();
 	}
+	cargarTrabajadores();
 }
 
-void Empresa::eliminarLegajo(){
-	
+void Empresa::darAltadeTrab(){
+	ofstream txt ("trabajadores.txt", ios_base::app);
+	char tipo;
+	int legajo;
+	string nombre;
+	cout<< "Ingrese E.Empleado C.Consultor J.Jornalero : ";
+	cin>> tipo;
+	cout<< "ingrese legajo : ";
+	cin>> legajo;
+	cout<< "Ingrese nombre y apellido separado por _(guion bajo) : ";
+	cin>>nombre;
+	if(tipo == 'E'){
+		int sueldo_mensual;
+		cout<< "Ingrese sueldo mensual : ";
+		cin>> sueldo_mensual;
+		txt<< tipo<< " "<< legajo<< " "<< nombre<< " "<< sueldo_mensual<< " 0 0"<< endl;
+	}
+	else if(tipo == 'C'){
+		int valor_hora_catedra;
+		int horas_catedras;
+		cout<< "Ingrese salario por hora catedra : ";
+		cin>> valor_hora_catedra;
+		cout<< "ingrese horas catedras asignadas : ";
+		cin>> horas_catedras;
+		txt<< tipo<< " "<< legajo<< " "<< nombre<< " "<< valor_hora_catedra<< " "<< horas_catedras<< " 0"<<endl;
+	}
+	else if(tipo == 'J'){
+		int valor_diario;
+		cout<< "Ingrese salario por dia : ";
+		cin>> valor_diario;
+		txt<< tipo<< " "<< legajo<< " "<< nombre<< " "<< valor_diario<< " 0"<< endl;
+	}
+	txt.close();
+	cargarTrabajadores();
+}
+
+void Empresa::listarTrabajadores(){
+	int contador = trabajadores.size();
+	for(int i = 0; i < contador; i++){
+		Trabajador* laburador = new Empleado;
+		laburador = trabajadores.back();
+		
+		if((*laburador).obtenerTipo() == 1){
+			Trabajador* auxT = new Empleado;
+			auxT = trabajadores.back();
+			(*auxT).mostrar();
+		}
+		else if((*laburador).obtenerTipo() == 2){
+			Trabajador* auxT = new Consultor;
+			auxT = trabajadores.back();
+			(*auxT).mostrar();
+		}
+		else if((*laburador).obtenerTipo() == 3){
+			Trabajador* auxT = new Jornalero;
+			auxT = trabajadores.back();
+			(*auxT).mostrar();
+		}
+		trabajadores.pop_back();
+	}
+	cargarTrabajadores();
+}
+
+void Empresa::sueldoMax(){
+	float sueldo_max = 0;
+	string nombre;
+	int contador = trabajadores.size();
+	for(int i = 0; i < contador; i++){
+		Trabajador* laburador = new Empleado;
+		laburador = trabajadores.back();
+		
+		if((*laburador).obtenerTipo() == 1){
+			Trabajador* auxT = new Empleado;
+			auxT = trabajadores.back();
+			if(sueldo_max < (*auxT).obtenerSueldo()){
+				sueldo_max = (*auxT).obtenerSueldo();
+				nombre = (*auxT).obtenerNombre();
+			}
+		}
+		else if((*laburador).obtenerTipo() == 2){
+			Trabajador* auxT = new Consultor;
+			auxT = trabajadores.back();
+			if(sueldo_max < (*auxT).obtenerSueldo()){
+				sueldo_max = (*auxT).obtenerSueldo();
+				nombre = (*auxT).obtenerNombre();
+			}
+		}
+		else if((*laburador).obtenerTipo() == 3){
+			Trabajador* auxT = new Jornalero;
+			auxT = trabajadores.back();
+			if(sueldo_max < (*auxT).obtenerSueldo()){
+				sueldo_max = (*auxT).obtenerSueldo();
+				nombre = (*auxT).obtenerNombre();
+			}
+		}
+		trabajadores.pop_back();
+	}
+	cargarTrabajadores();
+	cout<< "Nombre: "<< nombre<< endl<< "Sueldo: "<< sueldo_max<< endl<< endl;
+}
+
+void Empresa::sueldoMin(){
+	float sueldo_min;
+	string nombre;
+	int contador = trabajadores.size();
+	for(int i = 0; i < contador; i++){
+		Trabajador* laburador = new Empleado;
+		laburador = trabajadores.back();
+		if(i == 0)
+			sueldo_min = (*laburador).obtenerSueldo();
+
+		if((*laburador).obtenerTipo() == 1){
+			Trabajador* auxT = new Empleado;
+			auxT = trabajadores.back();
+			if(sueldo_min >= (*auxT).obtenerSueldo()){
+				sueldo_min = (*auxT).obtenerSueldo();
+				nombre = (*auxT).obtenerNombre();
+			}
+		}
+		else if((*laburador).obtenerTipo() == 2){
+			Trabajador* auxT = new Consultor;
+			auxT = trabajadores.back();
+			if(sueldo_min >= (*auxT).obtenerSueldo()){
+				sueldo_min = (*auxT).obtenerSueldo();
+				nombre = (*auxT).obtenerNombre();
+			}
+		}
+		else if((*laburador).obtenerTipo() == 3){
+			Trabajador* auxT = new Jornalero;
+			auxT = trabajadores.back();
+			if(sueldo_min >= (*auxT).obtenerSueldo()){
+				sueldo_min = (*auxT).obtenerSueldo();
+				nombre = (*auxT).obtenerNombre();
+			}
+		}
+		trabajadores.pop_back();
+	}
+	cargarTrabajadores();
+	cout<< "Nombre: "<< nombre<< endl<< "Sueldo: "<< sueldo_min<< endl<< endl;
+}
+
+void Empresa::sumDeSueldo(){
+	float suma_sueldos;
+	int contador = trabajadores.size();
+	for(int i = 0; i < contador; i++){
+		Trabajador* laburador = new Empleado;
+		laburador = trabajadores.back();
+		
+		if((*laburador).obtenerTipo() == 1){
+			Trabajador* auxT = new Empleado;
+			auxT = trabajadores.back();
+			suma_sueldos += (*auxT).obtenerSueldo();
+		}
+		else if((*laburador).obtenerTipo() == 2){
+			Trabajador* auxT = new Consultor;
+			auxT = trabajadores.back();
+			suma_sueldos += (*auxT).obtenerSueldo();
+		}
+		else if((*laburador).obtenerTipo() == 3){
+			Trabajador* auxT = new Jornalero;
+			auxT = trabajadores.back();
+			suma_sueldos += (*auxT).obtenerSueldo();
+		}
+		trabajadores.pop_back();
+	}
+	cargarTrabajadores();
+	cout<< "Suma de sueldo: "<< suma_sueldos<< endl<< endl;
 }

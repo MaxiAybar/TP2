@@ -18,9 +18,8 @@ class Empresa{
 		void ejecutarOpcion(int opcion);
 		void cargarTrabajadores();
 		void buscarLegajo();
-		void eliminarLegajo();
 		void darAltadeTrab();
-		void listarEmpleadores();
+		void listarTrabajadores();
 		void sueldoMax();
 		void sueldoMin();
 		void sumDeSueldo();

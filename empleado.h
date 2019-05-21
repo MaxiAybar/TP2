@@ -21,6 +21,8 @@ class Empleado : public Trabajador{
 		void mostrar();
 		int obtenerLegajo();
 		int obtenerTipo();
+		float obtenerSueldo();
+		string obtenerNombre();
 		~Empleado();
 };
 
