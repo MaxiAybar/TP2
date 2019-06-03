@@ -2,15 +2,24 @@
 #include <string>
 using namespace std;
 
-void Pelicula::asignarPelicula(string nombre, string genero, int valoracion, string director, string* reparto){
+void Pelicula::asignarNombre(string nombre){
 	this->nombre = nombre;
+}
+
+void Pelicula::asignarGenero(string genero){
 	this->genero = genero;
+}
+
+void Pelicula::asignarValoracion(int valoracion){
 	this->valoracion = valoracion;
+}
+
+void Pelicula::asignarDirector(string director){
 	this->director = director;
-	
-	for(int i = 0; i < (*reparto).size(); i++){
-		this->reparto[i] = reparto[i];
-	}
+}
+
+void Pelicula::asignarActor(string *actor){
+
 }
 
 string Pelicula::obtenerNombre(){
@@ -29,10 +38,5 @@ string Pelicula::obtenerDirector(){
 	return director;
 }
 
-string Pelicula::obtenerReparto(){
-	return *reparto;
-}
-
 Pelicula::~Pelicula(){
-	delete [] reparto;
 }

@@ -1,14 +1,15 @@
-#ifndef _LISTA_H
-#define _LISTA_H
+#ifndef _LISTA_H_INCLUDED
+#define _LISTA_H_INCLUDED
 
 #include "nodo.h"
 #include "iterador.h"
+#include <string>
 
 template <class T>
 class Lista{
 	private:
 		Nodo<T> *primer_nodo;
-	
+
 	public:
 		//Constructor
 		Lista();
@@ -21,9 +22,7 @@ class Lista{
 		//Getters
 		Iterador<T> *obtenerIterador();
 		//Destructor
-		virtual ~Lista();
+        ~Lista();
 };
-
-
 
 #endif

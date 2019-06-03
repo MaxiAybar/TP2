@@ -1,12 +1,12 @@
-#ifndef _NODO_H
-#define _NODO_H
+#ifndef _NODO_H_INCLUDED
+#define _NODO_H_INCLUDED
 
 template <class T>
 class Nodo{
 	private:
 		T* objeto;
 		Nodo<T> *siguiente;
-	
+
 	public:
 		//Constructor
 		Nodo(T* obj, Nodo<T> *sig);
